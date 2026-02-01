@@ -53,7 +53,6 @@ func update_values():
 	var moves = []
 	moves.append_array(player["moves"])
 	for i in range(level):
-		print($Data.masks[mask])
 		moves.append_array($Data.masks[mask]["moves"][i])
 	
 	for i in moves:
