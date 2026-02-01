@@ -10,6 +10,12 @@ var floor_number = 0
 var on_stair = false
 var in_combat = false
 
+func set_in_combat(val: bool) -> void:
+	in_combat = val
+	
+func get_in_combat() -> bool:
+	return in_combat
+
 func _ready() -> void:
 	target_pos = position
 

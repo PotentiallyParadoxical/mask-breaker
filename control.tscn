@@ -21,11 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://dt5fttaku1oqu" path="res://Assets/chara_Portrait.png" id="17_kuuv8"]
 [ext_resource type="Texture2D" uid="uid://dh77dp7iomqua" path="res://Assets/Mask5.png" id="18_3fl80"]
 [ext_resource type="Texture2D" uid="uid://de1o8upfg2wji" path="res://Assets/HairOverlay.png" id="19_8jbwv"]
-[ext_resource type="Script" uid="uid://d38s0tcvurpfc" path="res://data.gd" id="21_ou021"]
 [ext_resource type="Texture2D" uid="uid://dq12mkqt6kppr" path="res://Assets/pressturnerx2.png" id="21_3fl80"]
-[ext_resource type="Script" path="res://data.gd" id="21_ou021"]
+[ext_resource type="Script" uid="uid://d38s0tcvurpfc" path="res://data.gd" id="21_ou021"]
 [ext_resource type="Texture2D" uid="uid://da58l47ymu5ly" path="res://Assets/halfbloodpressturnerx2.png" id="22_3fl80"]
-[ext_resource type="VideoStream" path="res://kevin_james.ogv" id="23_8jbwv"]
+[ext_resource type="VideoStream" uid="uid://bj0duyaeetrkh" path="res://kevin_james.ogv" id="23_8jbwv"]
 
 [node name="Control" type="Control" unique_id=1237587980]
 layout_mode = 3
@@ -54,7 +53,6 @@ texture = ExtResource("3_kuuv8")
 
 [node name="Hl2StalkerScream" type="AudioStreamPlayer" parent="Enemy" unique_id=484783691]
 stream = ExtResource("4_3fl80")
-volume_db = 15.0
 
 [node name="Top Bar" type="TextureRect" parent="." unique_id=857206827]
 layout_mode = 0

@@ -5,7 +5,7 @@ extends Control
 
 var player = {}
 var enemy = null
-var mask_index = 0;
+var mask_index: int = 0
 var mask_count = 0
 var mask = null
 var level = 3
@@ -18,7 +18,7 @@ var cenemy_turns = enemy_turns
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mask_count = $Data.masks.keys().count
+	mask_count = $Data.masks.keys().size()
 	mask = $Data.masks.keys()[mask_index]
 	$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
 	player = $"Data".entities["player"].duplicate(true)
@@ -51,10 +51,8 @@ func update_values():
 		echp = enemy["chp"]
 		ehp = enemy["hp"]
 	# Remove existing moves in menus
-	for i in range($"Assortment of Attacks".item_count):
-		$"Assortment of Attacks".remove_item(0)
-	for i in range($"List of Magiks".item_count):
-		$"List of Magiks".remove_item(0)
+	$"Assortment of Attacks".clear()
+	$"List of Magiks".clear()
 	# Get player moveset
 	var moves = []
 	moves.append_array(player["moves"])
@@ -238,7 +236,6 @@ func _input(event: InputEvent) -> void:
 		enemy = null
 	if player["chp"] <= 0: get_tree().quit()
 	
-	#if event.is_action_released("move_left"):
 	if event.is_action_released("Help"):
 		if $VideoStreamPlayer.is_playing():
 			$VideoStreamPlayer.stop()
@@ -246,6 +243,22 @@ func _input(event: InputEvent) -> void:
 		else:
 			$VideoStreamPlayer.play()
 			$VideoStreamPlayer.visible = true
+			
+	if event.is_action_released("move_left") and $"../Player".get_in_combat():
+		if mask_index == 0: mask_index = mask_count
+		mask_index -= 1
+	
+		mask = $Data.masks.keys()[mask_index]
+		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
+		
+	if event.is_action_released("move_right") and $"../Player".get_in_combat():
+		mask_index += 1
+		if mask_index == mask_count: mask_index = 0
+	
+		mask = $Data.masks.keys()[mask_index]
+		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
+		
+	update_values()
 
 func spawn_enemy() -> void:
 	enemy = $"Data".entities["rattus1"].duplicate(true)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://e4oge1uy8wim"]
 
 [ext_resource type="Texture2D" uid="uid://dld8n52agqym0" path="res://icon.svg" id="1_4flbx"]
-[ext_resource type="Script" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bwkqpk0pqtygm" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://cyfuc3pgh0epq" path="res://Assets/snd_menuconfirm2.wav" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://hxdjuvjtp1a7" path="res://Assets/snd_menuding.wav" id="4_hqtel"]
 [ext_resource type="AudioStream" uid="uid://daertmjr5bs0h" path="res://Assets/mus_roaming01.ogg" id="5_sweqy"]
@@ -30,4 +30,5 @@ stream = ExtResource("4_hqtel")
 
 [node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=1536358209]
 stream = ExtResource("5_sweqy")
+volume_db = 10.0
 autoplay = true

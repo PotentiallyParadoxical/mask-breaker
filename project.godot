@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mask Breaker"
-run/main_scene="uid://bv14jacvq2qsw"
+run/main_scene="uid://cvb0fxvji5qrd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

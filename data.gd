@@ -60,7 +60,7 @@ var masks: Dictionary = {
 	},
 	"masksang": {
 		"name": "",
-		"sprite": "",
+		"sprite": "res://Assets/Mask4.png",
 		"moves": [
 			[], # 1
 			[], # 2
@@ -70,7 +70,7 @@ var masks: Dictionary = {
 	},
 	"maskchol": {
 		"name": "",
-		"sprite": "",
+		"sprite": "res://Assets/mask3.png",
 		"moves": [
 			["chol1"], # 1
 			["chol2"], # 2
@@ -80,7 +80,7 @@ var masks: Dictionary = {
 	},
 	"maskmela": {
 		"name": "",
-		"sprite": "",
+		"sprite": "res://Assets/Mask1_Redo_Gems.png",
 		"moves": [
 			[], # 1
 			["mela2"], # 2
@@ -90,7 +90,7 @@ var masks: Dictionary = {
 	},
 	"maskphle": {
 		"name": "",
-		"sprite": "",
+		"sprite": "res://Assets/phlem.png",
 		"moves": [
 			[], # 1
 			["phle2"], # 2

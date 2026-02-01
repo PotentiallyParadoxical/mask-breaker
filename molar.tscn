@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://0gto5ugjomfr"]
 
+[ext_resource type="Texture2D" uid="uid://d138p5jsuma7r" path="res://Assets/walltex2_lowcontrast.png" id="1_iqq4s"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0btqq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0btqq"]
+albedo_texture = ExtResource("1_iqq4s")
+
 [sub_resource type="BoxMesh" id="BoxMesh_iqq4s"]
+material = SubResource("StandardMaterial3D_0btqq")
 
 [node name="Molar" type="StaticBody3D" unique_id=1070613165]
 
