@@ -250,6 +250,7 @@ func _input(event: InputEvent) -> void:
 	
 		mask = $Data.masks.keys()[mask_index]
 		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
+		update_values()
 		
 	if event.is_action_released("move_right") and $"../Player".get_in_combat():
 		mask_index += 1
@@ -257,8 +258,7 @@ func _input(event: InputEvent) -> void:
 	
 		mask = $Data.masks.keys()[mask_index]
 		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
-		
-	update_values()
+		update_values()
 
 func spawn_enemy() -> void:
 	enemy = $"Data".entities["rattus1"].duplicate(true)

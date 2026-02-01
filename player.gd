@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 		target_rot += PI/2
 		is_moving = true
 		print("move_left")
-	if Input.get_action_strength("move_back") > 0.5 or Input.get_action_strength("ui_back") > 0.5:
+	if Input.get_action_strength("move_back") > 0.5 or Input.get_action_strength("ui_down") > 0.5:
 		#$"../Control".spawn_enemy()
 		#in_combat = true
 		target_rot += PI

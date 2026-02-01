@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dq12mkqt6kppr" path="res://Assets/pressturnerx2.png" id="21_3fl80"]
 [ext_resource type="Script" uid="uid://d38s0tcvurpfc" path="res://data.gd" id="21_ou021"]
 [ext_resource type="Texture2D" uid="uid://da58l47ymu5ly" path="res://Assets/halfbloodpressturnerx2.png" id="22_3fl80"]
-[ext_resource type="VideoStream" uid="uid://bj0duyaeetrkh" path="res://kevin_james.ogv" id="23_8jbwv"]
+[ext_resource type="VideoStream" path="res://kevin_james.ogv" id="23_8jbwv"]
 
 [node name="Control" type="Control" unique_id=1237587980]
 layout_mode = 3
