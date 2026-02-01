@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0gto5ugjomfr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0btqq"]
+size = Vector2(1, 1)
+center_offset = Vector3(0, -0.5, 0)
+
+[node name="roof_floor" type="Node3D" unique_id=1244512024]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1875965974]
+mesh = SubResource("PlaneMesh_0btqq")
+
+[node name="Roof" type="MeshInstance3D" parent="." unique_id=1699670233]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_0btqq")
