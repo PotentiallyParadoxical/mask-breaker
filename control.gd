@@ -238,6 +238,13 @@ func _input(event: InputEvent) -> void:
 	if player["chp"] <= 0: get_tree().quit()
 	
 	#if event.is_action_released("move_left"):
+	if event.is_action_released("Help"):
+		if $VideoStreamPlayer.is_playing():
+			$VideoStreamPlayer.stop()
+			$VideoStreamPlayer.visible = false
+		else:
+			$VideoStreamPlayer.play()
+			$VideoStreamPlayer.visible = true
 
 func spawn_enemy() -> void:
 	enemy = $"Data".entities["rattus1"].duplicate(true)
