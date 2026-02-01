@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cvb0fxvji5qrd"]
+[gd_scene format=3 uid="uid://bv14jacvq2qsw"]
 
-[ext_resource type="Script" uid="uid://cwkol2svqxyaw" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Script" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://0gto5ugjomfr" path="res://molar.tscn" id="2_036b0"]
 [ext_resource type="PackedScene" uid="uid://e4oge1uy8wim" path="res://player.tscn" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://cqphn3txbnerx" path="res://control.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dbxdcvxy16dde" path="res://control.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://5iw486go26o0" path="res://key.tscn" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://b1kw7uug28c3p" path="res://blockage.tscn" id="5_dwbse"]
 [ext_resource type="PackedScene" uid="uid://bx6gnc2ahgo7a" path="res://heal.tscn" id="6_pkg7o"]
