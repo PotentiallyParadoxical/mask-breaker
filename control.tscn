@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cqphn3txbnerx"]
+[gd_scene format=3 uid="uid://dbxdcvxy16dde"]
 
 [ext_resource type="Script" uid="uid://c6sik6wtx52ye" path="res://control.gd" id="1_qtu10"]
 [ext_resource type="Texture2D" uid="uid://cky2i61r2s72j" path="res://Assets/_REFERENCE.png" id="2_iy58a"]
@@ -19,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dcypvhel4r728" path="res://Assets/Bar_Blue.png" id="15_ou021"]
 [ext_resource type="Texture2D" uid="uid://vj6537pfcuo0" path="res://Assets/Bar_Purple.png" id="16_3fl80"]
 [ext_resource type="Texture2D" uid="uid://bqakydduw8irw" path="res://Assets/EnemyHealth.png" id="17_8jbwv"]
-[ext_resource type="Script" uid="uid://d38s0tcvurpfc" path="res://data.gd" id="21_ou021"]
+[ext_resource type="Texture2D" uid="uid://dq12mkqt6kppr" path="res://Assets/pressturnerx2.png" id="21_3fl80"]
+[ext_resource type="Script" path="res://data.gd" id="21_ou021"]
+[ext_resource type="Texture2D" uid="uid://da58l47ymu5ly" path="res://Assets/halfbloodpressturnerx2.png" id="22_3fl80"]
 
 [node name="Control" type="Control" unique_id=1237587980]
 layout_mode = 3
@@ -219,3 +221,99 @@ texture = ExtResource("15_ou021")
 
 [node name="Data" type="Node" parent="." unique_id=1607417848]
 script = ExtResource("21_ou021")
+
+[node name="Eturn" type="Panel" parent="." unique_id=280706456]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 100.0
+offset_right = 25.0
+offset_bottom = 170.0
+
+[node name="HT1" type="TextureRect" parent="Eturn" unique_id=1757902405]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 52.0
+offset_right = 18.0
+offset_bottom = 68.0
+texture = ExtResource("22_3fl80")
+
+[node name="T1" type="TextureRect" parent="Eturn" unique_id=1726009779]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 52.0
+offset_right = 18.0
+offset_bottom = 68.0
+texture = ExtResource("21_3fl80")
+
+[node name="T2" type="TextureRect" parent="Eturn" unique_id=1914842596]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 18.0
+offset_bottom = 52.0
+texture = ExtResource("21_3fl80")
+
+[node name="T3" type="TextureRect" parent="Eturn" unique_id=1195804616]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 18.0
+offset_bottom = 35.0
+texture = ExtResource("21_3fl80")
+
+[node name="T4" type="TextureRect" parent="Eturn" unique_id=784633488]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("21_3fl80")
+
+[node name="Pturn" type="Panel" parent="." unique_id=1413441843]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 101.0
+offset_right = 554.0
+offset_bottom = 171.0
+
+[node name="HT1" type="TextureRect" parent="Pturn" unique_id=2004442511]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 52.0
+offset_right = 18.0
+offset_bottom = 68.0
+texture = ExtResource("22_3fl80")
+
+[node name="T1" type="TextureRect" parent="Pturn" unique_id=516178794]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 52.0
+offset_right = 18.0
+offset_bottom = 68.0
+texture = ExtResource("21_3fl80")
+
+[node name="T2" type="TextureRect" parent="Pturn" unique_id=849666058]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 18.0
+offset_bottom = 52.0
+texture = ExtResource("21_3fl80")
+
+[node name="T3" type="TextureRect" parent="Pturn" unique_id=1467930007]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 18.0
+offset_bottom = 35.0
+texture = ExtResource("21_3fl80")
+
+[node name="T4" type="TextureRect" parent="Pturn" unique_id=1449197312]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("21_3fl80")

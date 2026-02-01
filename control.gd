@@ -27,6 +27,8 @@ func _ready() -> void:
 	$"Assortment of Attacks".visible = false
 	$"Bag of the Items".visible = false
 	$"Top Bar".visible = false
+	$Eturn.visible = false
+	$Pturn.visible = false
 	#$Mask.visible = false
 	#$Attack.visible = false
 	$"List of Magiks".focus_mode = FOCUS_NONE
@@ -41,30 +43,46 @@ func _process(delta: float) -> void:
 	pass
 
 func update_values():
+	# Get enemy values
 	var echp: float = 100
 	var ehp: float = 100
 	if enemy:
 		echp = enemy["chp"]
 		ehp = enemy["hp"]
+	# Remove existing moves in menus
 	for i in range($"Assortment of Attacks".item_count):
 		$"Assortment of Attacks".remove_item(0)
 	for i in range($"List of Magiks".item_count):
 		$"List of Magiks".remove_item(0)
+	# Get player moveset
 	var moves = []
 	moves.append_array(player["moves"])
 	for i in range(level):
 		moves.append_array($Data.masks[mask]["moves"][i])
-	
+	# Repopulate menu
 	for i in moves:
 		var m = $Data.moves[i]
 		if m["type"] == "phys":
 			$"Assortment of Attacks".add_item(m["name"])
 		else:
 			$"List of Magiks".add_item(m["name"])
+	# Set bars and labels
 	$"health holder/health/health content".position = Vector2(-71,71).lerp(Vector2.ZERO, min(1,player["chp"]/player["hp"]))
 	$"mana holder/mana/mana content".position = Vector2(-71,71).lerp(Vector2.ZERO, min(1,player["cmp"]/(player["mp"])))
 	$"Top Bar/enemy health holder/ehealth/ehealth content".position = Vector2(-71,71).lerp(Vector2.ZERO, min(1,echp/ehp))
 	$"Bag of the Items".set_item_text(0, "Keys: " + str(keys))
+	# Press turn system
+	$Pturn/HT1.visible = cplayer_turns % 2 == 1
+	$Pturn/T1.visible = cplayer_turns >= 2 and cplayer_turns % 2 == 0
+	$Pturn/T2.visible = cplayer_turns >= 3
+	$Pturn/T3.visible = cplayer_turns >= 5
+	$Pturn/T4.visible = cplayer_turns >= 7
+	# ---
+	$Eturn/HT1.visible = cenemy_turns % 2 == 1
+	$Eturn/T1.visible = cenemy_turns >= 2 and cenemy_turns % 2 == 0
+	$Eturn/T2.visible = cenemy_turns >= 3
+	$Eturn/T3.visible = cenemy_turns >= 5
+	$Eturn/T4.visible = cenemy_turns >= 7
 
 func do_attack(move: String) -> void:
 	# Nothing to do!
@@ -88,7 +106,7 @@ func do_attack(move: String) -> void:
 		elif enemy_res == 0: cplayer_turns = 0
 		else: cplayer_turns -= 2
 	else: cplayer_turns -= 2
-	
+	update_values()
 	print("Player press turns: " + str(cplayer_turns))
 	
 	# React to death
@@ -212,13 +230,14 @@ func _input(event: InputEvent) -> void:
 		$"../Player".in_combat = false
 		$Enemy.visible = false
 		$"Top Bar".visible = false
+		$Eturn.visible = false
+		$Pturn.visible = false
 		#$Mask.visible = false
 		#$Attack.visible = false
 		enemy = null
 	if player["chp"] <= 0: get_tree().quit()
 	
 	#if event.is_action_released("move_left"):
-		
 
 func spawn_enemy() -> void:
 	enemy = $"Data".entities["rattus1"].duplicate(true)
@@ -226,6 +245,8 @@ func spawn_enemy() -> void:
 	enemy["cmp"] = enemy["mp"]
 	$Enemy.visible = true
 	$"Top Bar".visible = true
+	$Eturn.visible = true
+	$Pturn.visible = true
 	#$Mask.visible = true
 	#$Attack.visible = true
 	$Enemy/Hl2StalkerScream.play()
