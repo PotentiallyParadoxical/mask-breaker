@@ -17,10 +17,13 @@ var cplayer_turns = player_turns
 var cenemy_turns = enemy_turns
 
 # Present enemies
-var enemies = ["maid1"]
+var enemies = ["rattus1", "maid1"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#$"../Player/Music".stream = load("res://Assets/mus_roaming01.ogg")q
+	#$"../Player/Music".seek(0)
+	
 	mask_count = $Data.masks.keys().size()
 	mask = $Data.masks.keys()[mask_index]
 	$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
@@ -237,6 +240,11 @@ func _input(event: InputEvent) -> void:
 		#$Mask.visible = false
 		#$Attack.visible = false
 		enemy = null
+		
+		# Switch music back
+		$"../Player/Music".stream = load("res://Assets/mus_roaming01.ogg")
+		$"../Player/Music".seek(0)
+		$"../Player/Music".play()
 	if player["chp"] <= 0: get_tree().quit()
 	
 	if event.is_action_released("Help"):
@@ -281,6 +289,14 @@ func _input(event: InputEvent) -> void:
 
 func spawn_enemy() -> void:
 	var enemy_str = enemies.pick_random()
+	var musicpath = ""
+	
+	if enemy_str == "maid1": musicpath = "res://Assets/sketch 69 - jam boss theme.mp3"
+	else: musicpath = "res://Assets/mus_battle1.ogg"
+	
+	$"../Player/Music".stream = load(musicpath)
+	$"../Player/Music".seek(0)
+	$"../Player/Music".play()
 	
 	enemy = $"Data".entities[enemy_str].duplicate(true)
 	$Enemy.texture = load(enemy["sprite"])

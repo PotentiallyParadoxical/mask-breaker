@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://0gto5ugjomfr"]
+[gd_scene format=3 uid="uid://kdglwmq7huri"]
+
+[ext_resource type="Texture2D" uid="uid://vcot5vwkodc8" path="res://Assets/FloorTex_Brown_Dark.png" id="1_njws8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr0jr"]
+albedo_texture = ExtResource("1_njws8")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0btqq"]
+material = SubResource("StandardMaterial3D_rr0jr")
 size = Vector2(1, 1)
 center_offset = Vector3(0, -0.5, 0)
 
