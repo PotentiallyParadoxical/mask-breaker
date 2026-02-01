@@ -28,12 +28,12 @@ var moves: Dictionary ={
 }
 
 var entities: Dictionary ={
-	"rattus1": { "name": "Fleshbound Rodent", "sprite": "", "hp": 7.0, "mp": 0.0, "con": 2, "str": 3, "mag": 0, "moves": ["phys1"], "phys": 1, "sang": 1.25, "chol": 1.25, "mela": 1 }, # Level 1
+	"rattus1": { "name": "Fleshbound Rodent", "sprite": "res://Assets/ratClean.png", "hp": 7.0, "mp": 0.0, "con": 2, "str": 3, "mag": 0, "moves": ["phys1"], "phys": 1, "sang": 1.25, "chol": 1.25, "mela": 1 }, # Level 1
 	"rattus2": { "name": "Fleshbound Rodent", "sprite": "", "hp": 11.0, "mp": 0.0, "con": 3, "str": 5, "mag": 2, "moves": ["phys1", "mela1"], "phys": 1, "sang": 1.25, "chol": 1.25, "mela": 1 }, # Level 2
 
 	"wolf": { "name": "Forlorn Wolf", "sprite": "", "hp": 10.0, "mp": 0.0, "con": 3, "str": 4, "mag": 2, "moves": ["phys1", "mela1"], "phys": 1, "sang": 1.25, "chol": 1, "mela": 0.75 }, # Level 1
 
-	"maid1": { "name": "Forgotten Maid", "sprite": "", "hp": 15.0, "mp": 0.0, "con": 3, "str": 2, "mag": 5, "moves": ["mela1", "chol2"], "phys": 1, "sang": 1.25, "chol": 0.75, "mela": 1.25 }, # Level 2
+	"maid1": { "name": "Forgotten Maid", "sprite": "res://Assets/maid.png", "hp": 15.0, "mp": 0.0, "con": 3, "str": 2, "mag": 5, "moves": ["mela1", "chol2"], "phys": 1, "sang": 1.25, "chol": 0.75, "mela": 1.25 }, # Level 2
 	"maid2": { "name": "Forgotten Maid", "sprite": "", "hp": 20.0, "mp": 0.0, "con": 4, "str": 2, "mag": 6, "moves": ["mela2", "chol2"], "phys": 1, "sang": 1.25, "chol": 0.75, "mela": 1.25 }, # Level 3
 
 	"noble1": { "name": "Feckless Noble", "sprite": "", "hp": 20.0, "mp": 0.0, "con": 4, "str": 2, "mag": 6, "moves": ["chol2", "sang1"], "phys": 1, "sang": 1.25, "chol": 1.25, "mela": 0 }, # Level 2

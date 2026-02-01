@@ -16,6 +16,9 @@ var enemy_turns = 2
 var cplayer_turns = player_turns
 var cenemy_turns = enemy_turns
 
+# Present enemies
+var enemies = ["maid1"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mask_count = $Data.masks.keys().size()
@@ -251,6 +254,15 @@ func _input(event: InputEvent) -> void:
 		mask = $Data.masks.keys()[mask_index]
 		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
 		
+		$"List of Magiks".visible = false
+		$"Assortment of Attacks".visible = false
+		$"Bag of the Items".visible = false
+		$"List of Magiks".focus_mode = FOCUS_NONE
+		$"Bag of the Items".focus_mode = FOCUS_NONE
+		$"Assortment of Attacks".focus_mode = FOCUS_NONE
+		
+		update_values()
+		
 	if event.is_action_released("move_right") and $"../Player".get_in_combat():
 		mask_index += 1
 		if mask_index == mask_count: mask_index = 0
@@ -258,10 +270,20 @@ func _input(event: InputEvent) -> void:
 		mask = $Data.masks.keys()[mask_index]
 		$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
 		
-	update_values()
+		$"List of Magiks".visible = false
+		$"Assortment of Attacks".visible = false
+		$"Bag of the Items".visible = false
+		$"List of Magiks".focus_mode = FOCUS_NONE
+		$"Bag of the Items".focus_mode = FOCUS_NONE
+		$"Assortment of Attacks".focus_mode = FOCUS_NONE
+		
+		update_values()
 
 func spawn_enemy() -> void:
-	enemy = $"Data".entities["rattus1"].duplicate(true)
+	var enemy_str = enemies.pick_random()
+	
+	enemy = $"Data".entities[enemy_str].duplicate(true)
+	$Enemy.texture = load(enemy["sprite"])
 	enemy["chp"] = enemy["hp"]
 	enemy["cmp"] = enemy["mp"]
 	$Enemy.visible = true
