@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_moving: return
 	if in_combat: return
-	if Input.get_action_strength("move_forward") > 0.5:
+	if Input.get_action_strength("move_forward") > 0.5 or Input.get_action_strength("ui_up") > 0.5:
 		target_pos += Vector3(0,0,-1).rotated(Vector3.UP,target_rot).round()
 		var tile_char = get_parent().Floors[floor_number][target_pos.z][target_pos.x]
 		if tile_char == "X" or tile_char == "B":
@@ -24,15 +24,15 @@ func _process(delta: float) -> void:
 		else:
 			is_moving = true
 			print("move_forward")
-	if Input.get_action_strength("move_right") > 0.5:
+	if Input.get_action_strength("move_right") > 0.5 or Input.get_action_strength("ui_right") > 0.5:
 		target_rot += -PI/2
 		is_moving = true
 		print("move_right")
-	if Input.get_action_strength("move_left") > 0.5:
+	if Input.get_action_strength("move_left") > 0.5 or Input.get_action_strength("ui_left") > 0.5:
 		target_rot += PI/2
 		is_moving = true
 		print("move_left")
-	if Input.get_action_strength("move_back") > 0.5:
+	if Input.get_action_strength("move_back") > 0.5 or Input.get_action_strength("ui_back") > 0.5:
 		#$"../Control".spawn_enemy()
 		#in_combat = true
 		target_rot += PI

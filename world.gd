@@ -9,6 +9,7 @@ extends Node3D
 @export var heal: PackedScene
 @export var stair_up: PackedScene
 @export var stair_down: PackedScene
+@export var roof_floor: PackedScene
 
 var Floors: Array[Array]
 
@@ -73,7 +74,6 @@ func load_map(map, offset) -> void:
 		y+=1
 		for c in row:
 			x+=1
-			if c == "O": continue
 			var m = null
 			if c == "X": m = molar.instantiate()
 			if c == "P": m = player.instantiate(); m.name = "Player"
@@ -85,6 +85,10 @@ func load_map(map, offset) -> void:
 			if not (m == null):
 				m.position = offset + Vector3(x,0,y)
 				add_child(m)
+			var r = roof_floor.instantiate()
+			r.position = offset + Vector3(x,0,y)
+			add_child(r)
+			
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
