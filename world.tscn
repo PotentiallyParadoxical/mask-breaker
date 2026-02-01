@@ -11,7 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://twv4y3e8w6vy" path="res://stair_down.tscn" id="8_wse8f"]
 [ext_resource type="PackedScene" uid="uid://0gto5ugjomfr" path="res://roof_floor.tscn" id="9_wse8f"]
 
-[node name="World" type="Node3D" unique_id=1184187816]
+[sub_resource type="Environment" id="Environment_wse8f"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.7
+
+[node name="World" type="WorldEnvironment" unique_id=585392927]
+environment = SubResource("Environment_wse8f")
 script = ExtResource("1_aqk2v")
 molar = ExtResource("2_036b0")
 player = ExtResource("2_fj7yv")
@@ -21,8 +27,5 @@ heal = ExtResource("6_pkg7o")
 stair_up = ExtResource("7_ioo17")
 stair_down = ExtResource("8_wse8f")
 roof_floor = ExtResource("9_wse8f")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1296409938]
-transform = Transform3D(0.8660253, -0.12940955, 0.48296297, -0.12940955, 0.87500006, 0.46650645, -0.482963, -0.46650642, 0.74102545, 0, 0, 0)
 
 [node name="Control" parent="." unique_id=1237587980 instance=ExtResource("3_tlwt5")]

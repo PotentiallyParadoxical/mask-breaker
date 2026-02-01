@@ -1,4 +1,4 @@
-extends Node3D
+extends Node
 
 #@export var map: Array[Array] = []
 @export var cmap: Array[String] = []
