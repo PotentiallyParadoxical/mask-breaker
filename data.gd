@@ -50,6 +50,7 @@ var entities: Dictionary ={
 var masks: Dictionary = {
 	"maskphys": {
 		"name": "Revolution",
+		"sprite": "res://Assets/Mask5.png",
 		"moves": [
 			["phys1", "mela1", "phle1"], # Moves at level 1
 			["phys2", "sang1"], # Add these at level 2
@@ -59,6 +60,7 @@ var masks: Dictionary = {
 	},
 	"masksang": {
 		"name": "",
+		"sprite": "",
 		"moves": [
 			[], # 1
 			[], # 2
@@ -68,6 +70,7 @@ var masks: Dictionary = {
 	},
 	"maskchol": {
 		"name": "",
+		"sprite": "",
 		"moves": [
 			["chol1"], # 1
 			["chol2"], # 2
@@ -77,6 +80,7 @@ var masks: Dictionary = {
 	},
 	"maskmela": {
 		"name": "",
+		"sprite": "",
 		"moves": [
 			[], # 1
 			["mela2"], # 2
@@ -86,6 +90,7 @@ var masks: Dictionary = {
 	},
 	"maskphle": {
 		"name": "",
+		"sprite": "",
 		"moves": [
 			[], # 1
 			["phle2"], # 2

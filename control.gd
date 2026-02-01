@@ -20,6 +20,7 @@ var cenemy_turns = enemy_turns
 func _ready() -> void:
 	mask_count = $Data.masks.keys().count
 	mask = $Data.masks.keys()[mask_index]
+	$Portrait/Mask.texture = load($Data.masks[mask]["sprite"])
 	player = $"Data".entities["player"].duplicate(true)
 	player["chp"] = player["hp"]
 	player["cmp"] = player["mp"]
