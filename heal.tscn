@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bx6gnc2ahgo7a"]
+
+[ext_resource type="Script" uid="uid://bp8lho121qnam" path="res://heal.gd" id="1_8dvr8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ltq3"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="SphereMesh" id="SphereMesh_psjkr"]
+radius = 0.25
+height = 0.5
+
+[node name="Heal" type="Area3D" unique_id=1504524536]
+script = ExtResource("1_8dvr8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7332678]
+shape = SubResource("BoxShape3D_7ltq3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2116328871]
+mesh = SubResource("SphereMesh_psjkr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

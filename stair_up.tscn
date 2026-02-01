@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0mgf07r11beo"]
+
+[ext_resource type="Script" uid="uid://dlr6mh8bv7oeh" path="res://stair.gd" id="1_mqigd"]
+[ext_resource type="Texture2D" uid="uid://bho047r3l08oo" path="res://Assets/stair.png" id="2_bwwdg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ltq3"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[node name="Stair Up" type="Area3D" unique_id=1504524536]
+script = ExtResource("1_mqigd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7332678]
+shape = SubResource("BoxShape3D_7ltq3")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=133207315]
+billboard = 2
+texture = ExtResource("2_bwwdg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

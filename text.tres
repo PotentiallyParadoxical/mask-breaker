@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bjxvbmh34mvv1"]
+
+[sub_resource type="SystemFont" id="SystemFont_qtu10"]
+font_names = PackedStringArray("Cascadia Code")
+
+[resource]
+font = SubResource("SystemFont_qtu10")
+font_size = 20
+font_color = Color(0, 1, 1, 1)

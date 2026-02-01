@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cvb0fxvji5qrd"]
+
+[ext_resource type="Script" uid="uid://cwkol2svqxyaw" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://0gto5ugjomfr" path="res://molar.tscn" id="2_036b0"]
+[ext_resource type="PackedScene" uid="uid://e4oge1uy8wim" path="res://player.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://cqphn3txbnerx" path="res://control.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://5iw486go26o0" path="res://key.tscn" id="4_036b0"]
+[ext_resource type="PackedScene" uid="uid://b1kw7uug28c3p" path="res://blockage.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" uid="uid://bx6gnc2ahgo7a" path="res://heal.tscn" id="6_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://0mgf07r11beo" path="res://stair_up.tscn" id="7_ioo17"]
+[ext_resource type="PackedScene" uid="uid://twv4y3e8w6vy" path="res://stair_down.tscn" id="8_wse8f"]
+[ext_resource type="Script" uid="uid://d38s0tcvurpfc" path="res://data.gd" id="10_wse8f"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fj7yv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
+size = Vector2(25, 25)
+
+[node name="World" type="Node3D" unique_id=1184187816]
+script = ExtResource("1_aqk2v")
+molar = ExtResource("2_036b0")
+player = ExtResource("2_fj7yv")
+key = ExtResource("4_036b0")
+blockage = ExtResource("5_dwbse")
+heal = ExtResource("6_pkg7o")
+stair_up = ExtResource("7_ioo17")
+stair_down = ExtResource("8_wse8f")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=973423128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1753238009]
+shape = SubResource("WorldBoundaryShape3D_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=901594298]
+mesh = SubResource("PlaneMesh_tlwt5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1296409938]
+transform = Transform3D(0.8660253, -0.12940955, 0.48296297, -0.12940955, 0.87500006, 0.46650645, -0.482963, -0.46650642, 0.74102545, 0, 0, 0)
+
+[node name="Control" parent="." unique_id=1237587980 instance=ExtResource("3_tlwt5")]
+
+[node name="Datasheet" type="Node" parent="." unique_id=381190995]
+script = ExtResource("10_wse8f")

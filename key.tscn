@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5iw486go26o0"]
+
+[ext_resource type="Script" uid="uid://bg1cjjnjg4qpk" path="res://key.gd" id="1_p0yg6"]
+[ext_resource type="Texture2D" uid="uid://d4emv8omxr2gh" path="res://Assets/key.png" id="1_up4cr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ltq3"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[node name="Key" type="Area3D" unique_id=1504524536]
+script = ExtResource("1_p0yg6")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=996064721]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_up4cr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7332678]
+shape = SubResource("BoxShape3D_7ltq3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

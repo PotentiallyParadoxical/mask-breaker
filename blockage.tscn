@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1kw7uug28c3p"]
+
+[ext_resource type="Texture2D" uid="uid://c0ij0olgr0st8" path="res://Assets/blockage.png" id="1_214m6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ltq3"]
+
+[node name="Blockage" type="Area3D" unique_id=1504524536]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=996064721]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_214m6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7332678]
+shape = SubResource("BoxShape3D_7ltq3")
